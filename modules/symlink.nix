@@ -21,11 +21,9 @@ in
           let
             lines =
               mapAttrsToList (name: value: "mkdir -p $(dirname ${name}) && ln -sf ${value} ${name}") cfg.files;
-            script = builtins.trace lines concatStringsSep "\n" lines;
+            script = concatStringsSep "\n" lines;
           in
-            builtins.trace
-              script
-              lib.hm.dag.entryAfter [ "writeBoundary" ] script;
+            lib.hm.dag.entryAfter [ "writeBoundary" ] script;
       }
     )
   ];
