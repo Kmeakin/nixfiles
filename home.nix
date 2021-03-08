@@ -1,14 +1,22 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [
-    firefox
-    rnix-lsp
-  ];
-
-  programs.home-manager = {
-    enable = true;
+{ config, lib, pkgs, ... }:
+let
+  myLib = {
+    dotfilesDir = "/home/karl/git/me/nixfiles";
   };
+in
+{
+  imports = lib.lists.map (module: import module { inherit config pkgs lib myLib; })
+    [
+      ./vscode.nix
+      ./xdg.nix
 
-  programs.vscode = {
-    enable = true;
-  };
+      ./modules/symlink.nix
+    ];
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
+
+  home.username = "karl";
+  home.homeDirectory = "/home/karl";
+  home.stateVersion = "20.09";
 }
