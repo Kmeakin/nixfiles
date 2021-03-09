@@ -7,6 +7,7 @@ in
 {
   imports = lib.lists.map (module: import module { inherit config pkgs lib myLib; })
     [
+      ./kde.nix
       ./vscode.nix
       ./xdg.nix
 
