@@ -1,8 +1,4 @@
-# Settings common to every machine
-
 { config, pkgs, ... }: {
-  imports = [ ./desktop.nix ];
-
   nixpkgs.config.allowUnfree = true;
 
   nix = {
