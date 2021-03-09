@@ -52,5 +52,10 @@
   '';
   environment.pathsToLink = [ "/share/zsh" ]; # enable zsh completions
 
+  # TODO: can this be moved to home-manager somehow?
+  fonts.fonts = with pkgs; [
+    fira-code
+  ];
+
   system.stateVersion = "20.09";
 }
