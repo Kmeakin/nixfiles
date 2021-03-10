@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }: {
-    programs.bash = {
-        enable = true;
-        historyFile = "${config.xdg.dataHome}/bash/bash_history";
-    };
+  programs.bash = {
+    enable = true;
+    historyFile = "${config.xdg.dataHome}/bash/bash_history";
+  };
 }
