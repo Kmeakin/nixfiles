@@ -1,11 +1,6 @@
 { config, pkgs, ... }: {
   nixpkgs.config.allowUnfree = true;
 
-  nix = {
-    package = pkgs.nixUnstable;
-    extraOptions = "experimental-features = nix-command flake";
-  };
-
   # enable REISUB
   boot.kernel.sysctl = { "kernel.sysrq" = 1; };
   boot.kernelParams = [ "sysrq_always_enabled=1" ];

@@ -1,5 +1,5 @@
-{ config, lib, pkgs, ... }: {
-  imports = lib.lists.map (module: import module { inherit config pkgs lib; })
+{ config, lib, pkgs, fenix, ... }: {
+  imports = lib.lists.map (module: import module { inherit config pkgs fenix lib; })
     [
       ./dev
       ./editors
