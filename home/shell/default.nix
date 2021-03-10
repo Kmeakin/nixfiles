@@ -13,7 +13,17 @@ let
     gstat = "git status";
     gstatus = "git status";
 
-    ls = "exa --color=auto";
+    grep = "grep --color=auto";
+    igrep = "grep -i";
+    rg = "rg --smart-case";
+
+    exa = "exa --color=auto --icons --binary --git";
+    ls = "exa";
+    l = "exa -l";
+    la = "exa -a";
+    lal = "exa -la";
+    lla = "exa -la";
+    tree = "exa -T";
     cat = "bat --color=auto";
   };
 in
@@ -23,7 +33,6 @@ in
       ./git.nix
       ./pass.nix
     ];
-
 
   home.packages = with pkgs; [
     bat
@@ -43,7 +52,7 @@ in
 
   programs.bash = {
     enable = true;
-    historyFile = "${config.xdg.dataHome}/bash/bash_history";
+    historyFile = "${config.xdg.dataHome}/bash_history";
     historyFileSize = 2147483647;
     historySize = 2147483647;
     shellAliases = aliases;
@@ -52,7 +61,7 @@ in
   programs.zsh = {
     enable = true;
     history = {
-      path = "${config.xdg.dataHome}/zsh/zsh_history";
+      path = "${config.xdg.dataHome}/zsh_history";
       save = 2147483647;
       size = 2147483647;
     };
