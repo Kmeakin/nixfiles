@@ -5,6 +5,10 @@
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.consoleMode = "max";
+  boot.loader.systemd-boot.editor = false;
+  boot.loader.systemd-boot.memtest86.enable = true;
+
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.availableKernelModules =
     [ "xhci_pci" "ehci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
