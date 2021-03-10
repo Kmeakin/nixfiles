@@ -18,6 +18,13 @@ let
   };
 in
 {
+  imports = lib.lists.map (module: import module { inherit config pkgs lib; })
+    [
+      ./git.nix
+      ./pass.nix
+    ];
+
+
   home.packages = with pkgs; [
     bat
     dfc
@@ -31,6 +38,8 @@ in
     ripgrep
     tokei
   ];
+
+  programs.command-not-found.enable = true;
 
   programs.bash = {
     enable = true;
