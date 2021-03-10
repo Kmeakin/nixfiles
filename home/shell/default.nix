@@ -43,6 +43,7 @@ in
     file
     htop
     neofetch
+    onefetch
     ranger
     ripgrep
     tokei
