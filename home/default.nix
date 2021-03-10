@@ -8,6 +8,7 @@ in
   imports = lib.lists.map (module: import module { inherit config pkgs lib myLib; })
     [
       ./kde.nix
+      ./shell.nix
       ./vscode.nix
       ./xdg.nix
 
