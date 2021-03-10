@@ -50,6 +50,7 @@
   # TODO: can this be moved to home-manager somehow?
   fonts.fonts = with pkgs; [
     fira-code
+    nerdfonts
   ];
 
   system.stateVersion = "20.09";
