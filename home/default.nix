@@ -7,12 +7,11 @@ in
 {
   imports = lib.lists.map (module: import module { inherit config pkgs lib myLib; })
     [
+      ./dev.nix
       ./kde.nix
       ./shell.nix
       ./vscode.nix
       ./xdg.nix
-
-      ./modules/symlink.nix
     ];
 
   # Let Home Manager install and manage itself.
