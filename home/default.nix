@@ -1,16 +1,9 @@
-{ config, lib, pkgs, ... }:
-let
-  myLib = {
-    dotfilesDir = "/home/karl/git/me/nixfiles";
-  };
-in
-{
-  imports = lib.lists.map (module: import module { inherit config pkgs lib myLib; })
+{ config, lib, pkgs, ... }: {
+  imports = lib.lists.map (module: import module { inherit config pkgs lib; })
     [
       ./dev
-      ./kde.nix
-      ./shell.nix
-      ./vscode.nix
+      ./editors
+      ./graphical
       ./xdg.nix
     ];
 
@@ -19,5 +12,5 @@ in
 
   home.username = "karl";
   home.homeDirectory = "/home/karl";
-  home.stateVersion = "20.09";
+  home.stateVersion = "21.05";
 }
