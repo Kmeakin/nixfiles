@@ -7,7 +7,13 @@
 
   home.sessionVariables = {
     PASSWORD_STORE_DIR = "${config.xdg.dataHome}/password-store";
-    GNUPGHOME = "${config.xdg.dataHome}/gnupg";
+    # TODO: not having it in ~/.gnupg breaks pinentry :(
+    # GNUPGHOME = "${config.xdg.dataHome}/gnupg";
+  };
+
+  services.gpg-agent = {
+    enable = true;
+    pinentryFlavor = "qt";
   };
 
   programs.git.extraConfig = {
