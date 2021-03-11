@@ -9,5 +9,6 @@
     okular
     thunderbird
     firefox
+    gwenview
   ];
 }
