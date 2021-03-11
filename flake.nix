@@ -18,7 +18,11 @@
             { pkgs, ... }: {
               nix = {
                 autoOptimiseStore = true;
-                extraOptions = "experimental-features = flakes nix-command";
+                extraOptions = ''
+                  experimental-features = flakes nix-command # for `nix flake`
+                  keep-outputs = true     # to stop output of `nix-shell` being GCed
+                  keep-derivations = true # ditto
+                '';
                 nixPath = [ "nixos=${nixpkgs}" "nixpkgs=${nixpkgs}" ];
                 package = pkgs.nixUnstable;
               };
