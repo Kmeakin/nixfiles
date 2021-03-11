@@ -35,6 +35,10 @@ in
     ];
 
   home.packages = with pkgs; [
+    atool
+    zip
+    unzip
+
     bat
     dfc
     du-dust
@@ -47,6 +51,8 @@ in
     ranger
     ripgrep
     tokei
+
+    openconnect
   ];
 
   programs.command-not-found.enable = true;
