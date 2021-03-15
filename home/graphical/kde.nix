@@ -6,4 +6,8 @@
     libsForQt5.qtstyleplugin-kvantum
     papirus-icon-theme
   ];
+
+  home.sessionVariables = {
+    KDEHOME = "${config.xdg.configHome}/kde";
+  };
 }

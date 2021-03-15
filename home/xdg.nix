@@ -29,5 +29,10 @@ in
     XDG_PICTURES_DIR = "${config.xdg.userDirs.pictures}";
     XDG_PUBLICSHARE_DIR = "${config.xdg.userDirs.publicShare}";
     XDG_VIDEOS_DIR = "${config.xdg.userDirs.videos}";
+  } // {
+    # misc programs
+    LESSHISTFILE = "-"; # disable ~/.lesshist
+    XCOMPOSEFILE = "${config.xdg.configHome}/X11/xcompose";
+    XCOMPOSECACHE = "${config.xdg.cacheHome}/X11/xcompose";
   };
 }
