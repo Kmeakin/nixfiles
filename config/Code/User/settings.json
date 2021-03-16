@@ -1,0 +1,73 @@
+{
+    "workbench.colorTheme": "One Dark Pro",
+    "editor.minimap.enabled": false,
+    "nix.enableLanguageServer": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "files.enableTrash": false,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "java.codeGeneration.generateComments": true,
+    "editor.fontFamily": "\"Fira Code\"",
+    "editor.fontLigatures": true,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    // Vim easymotion is required for Jump menu - <SPC> j
+    "vim.easymotion": true,
+    // Use system clipboard for vim
+    "vim.useSystemClipboard": true,
+    // Trigger the main which key menu with in the active editor with vim
+    // This cannot be put into keybindings.json because it will
+    // create conflict with Vim.
+    // https://github.com/stevenguh/spacecode/issues/3
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
+        },
+        {
+            "before": [
+                ","
+            ],
+            "commands": [
+                "vspacecode.space",
+                {
+                    "command": "whichkey.triggerKey",
+                    "args": "m"
+                }
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
+        },
+        {
+            "before": [
+                ","
+            ],
+            "commands": [
+                "vspacecode.space",
+                {
+                    "command": "whichkey.triggerKey",
+                    "args": "m"
+                }
+            ]
+        }
+    ]
+}
