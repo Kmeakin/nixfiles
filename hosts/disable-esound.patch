@@ -1,17 +1,12 @@
 --- a/src/daemon/default.pa.in	2021-01-16 17:26:36.000000000 +0000
-+++ b/src/daemon/default.pa.in	2021-03-15 14:28:28.695868514 +0000
-@@ -86,14 +86,6 @@
- .endif
- ])dnl
++++ b/src/daemon/default.pa.in	2021-03-15 14:50:16.875460066 +0000
+@@ -88,9 +88,6 @@
  
--ifelse(@HAVE_AF_UNIX@, 1, [dnl
--### Load several protocols
+ ifelse(@HAVE_AF_UNIX@, 1, [dnl
+ ### Load several protocols
 -.ifexists module-esound-protocol-unix@PA_SOEXT@
 -load-module module-esound-protocol-unix
 -.endif
--load-module module-native-protocol-unix
--])dnl
--
- ### Network access (may be configured with paprefs, so leave this commented
- ### here if you plan to use paprefs)
- #load-module module-esound-protocol-tcp
+ load-module module-native-protocol-unix
+ ])dnl
+ 
