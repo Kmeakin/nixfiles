@@ -4,5 +4,6 @@
     clang-tools
     (pkgs.hiPrio gcc)
     gnumake
+    binutils
   ];
 }
