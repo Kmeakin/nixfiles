@@ -1,6 +1,7 @@
 install:
 	stow --verbose=1 --target $(XDG_CONFIG_HOME)/ config/
-	sudo nixos-rebuild switch --flake .
+	sudo nixos-rebuild switch --flake . --impure
 
 update:
-	sudo nixos-rebuild switch --upgrade --flake .
+	rm flake.lock
+	sudo nixos-rebuild switch --flake . --impure
