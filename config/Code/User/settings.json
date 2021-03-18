@@ -69,5 +69,26 @@
                 }
             ]
         }
-    ]
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "z",
+                "m"
+            ],
+            "commands": [
+                "editor.foldAll"
+            ]
+        },
+        {
+            "before": [
+                "z",
+                "r"
+            ],
+            "commands": [
+                "editor.unfoldAll"
+            ]
+        }
+    ],
+    "vim.foldfix": true
 }
