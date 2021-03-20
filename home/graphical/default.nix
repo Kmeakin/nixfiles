@@ -10,5 +10,6 @@
     thunderbird
     firefox
     gwenview
+    zoom-us
   ];
 }
