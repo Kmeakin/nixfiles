@@ -3,5 +3,5 @@ install:
 	sudo nixos-rebuild switch --flake . --impure
 
 update:
-	rm flake.lock
+	rm -f flake.lock
 	sudo nixos-rebuild switch --flake . --impure
