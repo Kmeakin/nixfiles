@@ -13,9 +13,7 @@
         ]
       )
     )
-
     cargo-edit
-    cargo-insta
     cargo-expand
 
     sccache
