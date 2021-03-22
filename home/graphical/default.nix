@@ -5,11 +5,11 @@
 
   home.packages = with pkgs; [
     discord
-    spotify
-    okular
-    thunderbird
     firefox
     gwenview
+    okular
+    spotify
+    thunderbird
     zoom-us
   ];
 }
