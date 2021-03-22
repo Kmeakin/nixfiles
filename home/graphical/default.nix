@@ -4,7 +4,7 @@
   ];
 
   home.packages = with pkgs; [
-    discord
+    (discord.override { nss = pkgs.nss; })
     firefox
     gwenview
     okular
