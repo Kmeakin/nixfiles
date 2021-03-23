@@ -43,6 +43,7 @@
   users.users.karl = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
+    shell = pkgs.zsh;
   };
 
   environment.extraInit = ''
