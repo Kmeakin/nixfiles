@@ -5,10 +5,10 @@
       combine (
         with latest; [
           cargo
-          clippy
+          clippy-preview
           rust-std
           rustc
-          rustfmt
+          rustfmt-preview
           rust-src
         ]
       )
