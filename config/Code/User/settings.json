@@ -1,75 +1,31 @@
 {
-    "workbench.colorTheme": "One Dark Pro",
-    "editor.minimap.enabled": false,
-    "nix.enableLanguageServer": true,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
-    "files.enableTrash": false,
+    "editor.minimap.enabled": false,
+    "editor.suggestSelection": "first",
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
+    "files.enableTrash": false,
     "files.exclude": {
         "**/.classpath": true,
+        "**/.factorypath": true,
         "**/.project": true,
-        "**/.settings": true,
-        "**/.factorypath": true
+        "**/.settings": true
     },
     "java.codeGeneration.generateComments": true,
-    "editor.fontFamily": "\"Fira Code\"",
-    "editor.fontLigatures": true,
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "nix.enableLanguageServer": true,
+    "python.autoComplete.addBrackets": true,
+    "python.diagnostics.sourceMapsEnabled": true,
+    "python.experiments.enabled": false,
+    "python.formatting.blackPath": "~/.nix-profile/bin/black",
+    "python.formatting.provider": "black",
+    "python.linting.mypyEnabled": true,
+    "rust-analyzer.checkOnSave.command": "clippy",
     // Vim easymotion is required for Jump menu - <SPC> j
     "vim.easymotion": true,
-    // Use system clipboard for vim
-    "vim.useSystemClipboard": true,
-    // Trigger the main which key menu with in the active editor with vim
-    // This cannot be put into keybindings.json because it will
-    // create conflict with Vim.
-    // https://github.com/stevenguh/spacecode/issues/3
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": [
-                "<space>"
-            ],
-            "commands": [
-                "vspacecode.space"
-            ]
-        },
-        {
-            "before": [
-                ","
-            ],
-            "commands": [
-                "vspacecode.space",
-                {
-                    "command": "whichkey.triggerKey",
-                    "args": "m"
-                }
-            ]
-        }
-    ],
-    "vim.visualModeKeyBindingsNonRecursive": [
-        {
-            "before": [
-                "<space>"
-            ],
-            "commands": [
-                "vspacecode.space"
-            ]
-        },
-        {
-            "before": [
-                ","
-            ],
-            "commands": [
-                "vspacecode.space",
-                {
-                    "command": "whichkey.triggerKey",
-                    "args": "m"
-                }
-            ]
-        }
-    ],
+    "vim.foldfix": true,
     "vim.normalModeKeyBindings": [
         {
             "before": [
@@ -90,18 +46,55 @@
             ]
         }
     ],
-    "vim.foldfix": true,
-    "workbench.editorAssociations": [
+    // Trigger the main which key menu with in the active editor with vim
+    // This cannot be put into keybindings.json because it will
+    // create conflict with Vim.
+    // https://github.com/stevenguh/spacecode/issues/3
+    "vim.normalModeKeyBindingsNonRecursive": [
         {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
+        },
+        {
+            "before": [
+                ","
+            ],
+            "commands": [
+                "vspacecode.space",
+                {
+                    "args": "m",
+                    "command": "whichkey.triggerKey"
+                }
+            ]
         }
     ],
-    "python.autoComplete.addBrackets": true,
-    "python.diagnostics.sourceMapsEnabled": true,
-    "python.experiments.enabled": false,
-    "python.formatting.provider": "black",
-    "python.formatting.blackPath": "~/.nix-profile/bin/black",
-    "python.linting.mypyEnabled": true,
-    "rust-analyzer.checkOnSave.command": "clippy"
+    // Use system clipboard for vim
+    "vim.useSystemClipboard": true,
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
+        },
+        {
+            "before": [
+                ","
+            ],
+            "commands": [
+                "vspacecode.space",
+                {
+                    "args": "m",
+                    "command": "whichkey.triggerKey"
+                }
+            ]
+        }
+    ],
+    "workbench.colorTheme": "One Dark Pro",
 }
