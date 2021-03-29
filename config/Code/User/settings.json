@@ -101,5 +101,7 @@
     "python.experiments.enabled": false,
     "python.formatting.provider": "black",
     "python.formatting.blackPath": "~/.nix-profile/bin/black",
-    "python.linting.mypyEnabled": true
+    "python.linting.mypyEnabled": true,
+    "extensions.autoCheckUpdates": false,
+    "update.mode": "none"
 }
