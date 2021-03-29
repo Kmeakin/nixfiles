@@ -4,25 +4,30 @@
 { config, lib, pkgs, modulesPath, ... }: {
   imports = [ ./common.nix ];
 
+  # needed for wifi drivers
+  hardware.enableRedistributableFirmware = true;
+
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.kernelModules = [];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
+  boot.extraModulePackages = [];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-label/NIXOS";
+    {
+      device = "/dev/disk/by-label/NIXOS";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-label/BOOT";
+    {
+      device = "/dev/disk/by-label/BOOT";
       fsType = "vfat";
     };
 
-  swapDevices = [ ];
+  swapDevices = [];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 }
