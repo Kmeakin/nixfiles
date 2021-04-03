@@ -1,4 +1,11 @@
 { config, lib, myLib, pkgs, ... }: {
+  # for live share
+  # TODO: delete when liveshare no longer needed
+  services.gnome-keyring.enable = true;
+  home.packages = with pkgs; [
+    qtkeychain
+  ];
+
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
