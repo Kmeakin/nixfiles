@@ -27,8 +27,7 @@
       device = "/dev/disk/by-label/BOOT";
       fsType = "vfat";
     };
-
-  swapDevices = [];
+  swapDevices = [ { device = "/swapfile"; } ];
 
   # CPU
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
