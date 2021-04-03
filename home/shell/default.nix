@@ -53,6 +53,7 @@ in
     ranger
     ripgrep
     tokei
+    stow
 
     openconnect
   ];
