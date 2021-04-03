@@ -30,5 +30,5 @@
   swapDevices = [ { device = "/swapfile"; } ];
 
   # CPU
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+  powerManagement.cpuFreqGovernor = lib.mkDefault "performance";
 }
