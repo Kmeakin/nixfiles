@@ -27,7 +27,7 @@
       );
       configurations = {
         nixosConfigurations = {
-          "nixos" = nixpkgs.lib.nixosSystem {
+          "Desktop" = nixpkgs.lib.nixosSystem {
             inherit system;
             modules = [
               (
@@ -52,7 +52,7 @@
                 }
               )
 
-              ./hosts/thinkpad.nix
+              ./hosts/desktop.nix
               home-manager.nixosModules.home-manager
               {
                 home-manager.useGlobalPkgs = true;
