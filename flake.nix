@@ -8,9 +8,10 @@
     home-manager.inputs.nipkgs.follows = "nixpkgs";
     fenix.url = "github:nix-community/fenix";
     fenix.inputs.nipkgs.follows = "nixpkgs";
+    nixos-hardware.url = github:NixOS/nixos-hardware/master;
   };
 
-  outputs = inputs @ { home-manager, nixpkgs, flake-utils, fenix, ... }:
+  outputs = inputs @ { home-manager, nixpkgs, nixos-hardware, flake-utils, fenix, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -26,7 +27,7 @@
       );
       configurations = {
         nixosConfigurations = {
-          "Desktop" = nixpkgs.lib.nixosSystem {
+          "nixos" = nixpkgs.lib.nixosSystem {
             inherit system;
             modules = [
               (
@@ -51,7 +52,7 @@
                 }
               )
 
-              ./hosts/desktop.nix
+              ./hosts/thinkpad.nix
               home-manager.nixosModules.home-manager
               {
                 home-manager.useGlobalPkgs = true;
