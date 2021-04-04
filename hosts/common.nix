@@ -61,6 +61,9 @@
   fonts.fonts = with pkgs; [
     fira-code
     nerdfonts
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
   ];
 
   system.stateVersion = "20.09";
