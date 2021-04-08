@@ -141,15 +141,10 @@
         }
     ],
     "workbench.colorTheme": "One Dark Pro",
-    "workbench.editorAssociations": [
-        {
-            "filenamePattern": "*.ipynb",
-            "viewType": "jupyter.notebook.ipynb"
-        }
-    ],
     "editor.fontSize": 13,
     "C_Cpp.clang_format_fallbackStyle": "LLVM",
     "C_Cpp.clang_format_sortIncludes": true,
     "C_Cpp.default.cStandard": "c18",
-    "C_Cpp.default.cppStandard": "c++20"
+    "C_Cpp.default.cppStandard": "c++20",
+    "rewrap.autoWrap.enabled": true
 }
