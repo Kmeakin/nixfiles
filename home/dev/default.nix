@@ -3,7 +3,6 @@
     [
       ./cc.nix
       ./java.nix
-      ./latex.nix
       ./nix.nix
       ./rust.nix
       ./python.nix
