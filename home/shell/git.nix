@@ -5,4 +5,8 @@
     userName = "Karl Meakin";
     userEmail = "karlwfmeakin@gmail.com";
   };
+
+  programs.gh = {
+    enable = true;
+  };
 }
