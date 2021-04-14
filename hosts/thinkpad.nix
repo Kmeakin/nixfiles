@@ -1,6 +1,8 @@
 { config, lib, pkgs, modulesPath, ... }: {
   imports = [ ./common.nix ];
 
+  networking.hostName = "Thinkpad";
+
   # Needed for wifi drivers
   hardware.enableRedistributableFirmware = true;
 
