@@ -26,6 +26,8 @@
     fsType = "vfat";
   };
 
+  programs.steam.enable = true;
+
   # CPU
   powerManagement.cpuFreqGovernor = "performance";
 

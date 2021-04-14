@@ -3,6 +3,7 @@
     [
       ./dev
       ./editors
+      ./games
       ./graphical
       ./shell
       ./xdg.nix
