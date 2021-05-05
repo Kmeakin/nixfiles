@@ -26,6 +26,8 @@
     fsType = "vfat";
   };
 
+  swapDevices = [{device = "/swapfile";}];
+
   programs.steam.enable = true;
 
   # CPU
