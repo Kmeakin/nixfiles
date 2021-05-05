@@ -46,8 +46,8 @@
         {
           name = "nix-env-selector";
           publisher = "arrterian";
-          version = "1.0.6";
-          sha256 = "tOGsy4fm5KToKj3ci3LjAn5gwcI4WLt8MI7XCLMFZqY=";
+          version = "1.0.7";
+          sha256 = "DnaIXJ27bcpOrIp1hm7DcrlIzGSjo4RTJ9fD72ukKlc=";
         }
         {
           name = "discord-vscode";
