@@ -25,8 +25,7 @@
     device = "/dev/disk/by-label/NIXOS_BOOT";
     fsType = "vfat";
   };
-
-  swapDevices = [{device = "/swapfile";}];
+  swapDevices = [ { device = "/swapfile"; } ];
 
   programs.steam.enable = true;
 

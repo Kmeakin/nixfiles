@@ -1,4 +1,4 @@
-{ config, lib, pkgs, modulesPath, ... }: {
+{ config, lib, pkgs, ... }: {
   imports = [ ./common.nix ];
 
   networking.hostName = "Thinkpad";
@@ -18,17 +18,14 @@
   boot.extraModulePackages = [];
 
   # File systems
-  fileSystems."/" =
-    {
-      device = "/dev/disk/by-label/NIXOS";
-      fsType = "ext4";
-    };
-
-  fileSystems."/boot" =
-    {
-      device = "/dev/disk/by-label/BOOT";
-      fsType = "vfat";
-    };
+  fileSystems."/" = {
+    device = "/dev/disk/by-label/NIXOS";
+    fsType = "ext4";
+  };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-label/BOOT";
+    fsType = "vfat";
+  };
   swapDevices = [ { device = "/swapfile"; } ];
 
   # CPU
