@@ -40,10 +40,6 @@
     pinentryFlavor = "qt";
   };
 
-  # for live share
-  # TODO: delete when no longer needed
-  services.gnome3.gnome-keyring.enable = true;
-
   # Users
   users.users.karl = {
     isNormalUser = true;
