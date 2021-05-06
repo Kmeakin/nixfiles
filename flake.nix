@@ -15,6 +15,43 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+
+      mkSystem = hostname: {
+        "${hostname}" = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            (
+              { pkgs, ... }: {
+                nix = {
+                  autoOptimiseStore = true;
+                  extraOptions = ''
+                    experimental-features = flakes nix-command # for `nix flake`
+                    keep-outputs = true     # to stop output of `nix-shell` being GCed
+                    keep-derivations = true # ditto
+                  '';
+                  nixPath = [ "nixos=${nixpkgs}" "nixpkgs=${nixpkgs}" ];
+                  package = pkgs.nixUnstable;
+                };
+
+                nixpkgs = {
+                  config.allowUnfree = true;
+                  overlays = with inputs; [
+                    fenix.overlay
+                  ];
+                };
+              }
+            )
+
+            (./hosts + "/${hostname}.nix")
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.users.karl = import ./home;
+            }
+          ];
+        };
+      };
+
       shells = flake-utils.lib.eachDefaultSystem (
         system: {
           devShell = pkgs.mkShell {
@@ -25,42 +62,9 @@
           };
         }
       );
+
       configurations = {
-        nixosConfigurations = {
-          "Desktop" = nixpkgs.lib.nixosSystem {
-            inherit system;
-            modules = [
-              (
-                { pkgs, ... }: {
-                  nix = {
-                    autoOptimiseStore = true;
-                    extraOptions = ''
-                      experimental-features = flakes nix-command # for `nix flake`
-                      keep-outputs = true     # to stop output of `nix-shell` being GCed
-                      keep-derivations = true # ditto
-                    '';
-                    nixPath = [ "nixos=${nixpkgs}" "nixpkgs=${nixpkgs}" ];
-                    package = pkgs.nixUnstable;
-                  };
-
-                  nixpkgs = {
-                    config.allowUnfree = true;
-                    overlays = with inputs; [
-                      fenix.overlay
-                    ];
-                  };
-                }
-              )
-
-              ./hosts/desktop.nix
-              home-manager.nixosModules.home-manager
-              {
-                home-manager.useGlobalPkgs = true;
-                home-manager.users.karl = import ./home;
-              }
-            ];
-          };
-        };
+        nixosConfigurations = (mkSystem "Thinkpad") // (mkSystem "Desktop");
       };
     in
       shells // configurations;
