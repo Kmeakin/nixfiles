@@ -54,8 +54,6 @@ in
     ripgrep
     tokei
     stow
-
-    openconnect
   ];
 
   programs.command-not-found.enable = true;
