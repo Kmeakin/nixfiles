@@ -1,7 +1,7 @@
 { config, lib, pkgs, fenix, ... }: {
   home.packages = with pkgs; [
     (
-      with rust-nightly;
+      with pkgs.fenix;
       combine (
         with latest; [
           cargo
