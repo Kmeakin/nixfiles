@@ -6,10 +6,11 @@
         with latest; [
           cargo
           clippy-preview
+          rust-docs
+          rust-src
           rust-std
           rustc
           rustfmt-preview
-          rust-src
         ]
       )
     )
