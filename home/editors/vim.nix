@@ -13,6 +13,9 @@
       filetype plugin on
       syntax on
 
+      " Use system clipboard
+      set clipboard=unnamedplus
+
       " Indentation
       filetype indent on
 
