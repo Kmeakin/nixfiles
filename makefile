@@ -4,5 +4,5 @@ install:
 
 update:
 	stow --verbose=1 --target $(XDG_CONFIG_HOME)/ config/
-	nix flake update
+	sudo nix flake update
 	sudo nixos-rebuild switch --flake ".#`hostname`" --impure
