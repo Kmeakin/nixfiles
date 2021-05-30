@@ -63,5 +63,8 @@
     noto-fonts-emoji
   ];
 
+  # TODO: workaround for https://github.com/NixOS/nixpkgs/issues/124215
+  documentation.info.enable = false;
+
   system.stateVersion = "20.09";
 }
