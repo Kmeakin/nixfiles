@@ -6,6 +6,9 @@ switch:
 stow:
 	find config -type f -exec sh -c 'mkdir -p ~/.local/$$(dirname {}) && ln -sf $$(pwd)/{} ~/.local/{}' \;
 
+clean:
+	sudo nix-collect-garbage -d && nix-collect-garbage -d
+
 update:
 	sudo nix flake update
 
