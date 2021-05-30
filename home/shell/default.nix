@@ -53,7 +53,6 @@ in
     ranger
     ripgrep
     tokei
-    stow
   ];
 
   programs.command-not-found.enable = true;

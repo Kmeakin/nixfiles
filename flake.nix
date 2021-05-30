@@ -57,7 +57,6 @@
           devShell = pkgs.mkShell {
             nativeBuildInputs = with pkgs; [
               gnumake
-              stow
             ];
           };
         }
