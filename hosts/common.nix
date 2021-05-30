@@ -20,11 +20,6 @@
   # Sound
   sound.enable = true;
   hardware.pulseaudio.enable = true;
-  hardware.pulseaudio.package = pkgs.pulseaudio.overrideAttrs (
-    attrs: {
-      patches = [ ./disable-esound.patch ];
-    }
-  );
 
   # X11
   services.xserver.enable = true;
