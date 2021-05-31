@@ -146,5 +146,6 @@
     "C_Cpp.clang_format_sortIncludes": true,
     "C_Cpp.default.cStandard": "c18",
     "C_Cpp.default.cppStandard": "c++20",
-    "rewrap.autoWrap.enabled": true
+    "rewrap.autoWrap.enabled": true,
+    "rust-analyzer.procMacro.enable": false
 }
