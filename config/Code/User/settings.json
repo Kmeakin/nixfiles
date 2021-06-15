@@ -15,56 +15,7 @@
         "**/.project": true,
         "**/.settings": true
     },
-    "java.codeGeneration.generateComments": true,
-    "latex-workshop.bibtex-fields.sort.enabled": true,
-    "latex-workshop.bibtex-format.sort.enabled": true,
-    "latex-workshop.chktex.enabled": true,
-    "latex-workshop.chktex.run": "onType",
-    "latex-workshop.latex.clean.subfolder.enabled": true,
-    "latex-workshop.latex.outDir": "%DIR%/out",
-    "latex-workshop.latex.tools": [
-        {
-            "args": [
-                "--shell-escape", // added arg to default
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-pdf",
-                "-output-directory=%DIR%/out",
-                "%DOC%"
-            ],
-            "command": "latexmk",
-            "name": "latexmk"
-        },
-        {
-            "args": [
-                "--shell-escape", // added arg to default
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-output-directory=%DIR%/out",
-                "%DOC%"
-            ],
-            "command": "pdflatex",
-            "name": "pdflatex"
-        },
-        {
-            "args": [
-                "-output-directory=%DIR%/out",
-                "%DOCFILE%"
-            ],
-            "command": "bibtex",
-            "name": "bibtex"
-        }
-    ],
-    "latex-workshop.view.pdf.viewer": "tab",
     "nix.enableLanguageServer": true,
-    "python.autoComplete.addBrackets": true,
-    "python.diagnostics.sourceMapsEnabled": true,
-    "python.experiments.enabled": false,
-    "python.formatting.blackPath": "~/.nix-profile/bin/black",
-    "python.formatting.provider": "black",
-    "python.linting.mypyEnabled": true,
     "rust-analyzer.checkOnSave.command": "clippy",
     "update.mode": "none",
     // Vim easymotion is required for Jump menu - <SPC> j
@@ -146,6 +97,5 @@
     "C_Cpp.clang_format_sortIncludes": true,
     "C_Cpp.default.cStandard": "c18",
     "C_Cpp.default.cppStandard": "c++20",
-    "rewrap.autoWrap.enabled": true,
     "rust-analyzer.procMacro.enable": false
 }
