@@ -2,7 +2,7 @@
   description = "NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/master";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nipkgs.follows = "nixpkgs";
@@ -31,13 +31,13 @@
                   '';
                   nixPath = [ "nixos=${nixpkgs}" "nixpkgs=${nixpkgs}" ];
                   package = pkgs.nixUnstable;
+                  binaryCaches = [ "https://nix-community.cachix.org" ];
+                  binaryCachePublicKeys = [ "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=" ];
                 };
 
                 nixpkgs = {
                   config.allowUnfree = true;
-                  overlays = with inputs; [
-                    fenix.overlay
-                  ];
+                  overlays = with inputs; [ fenix.overlay ];
                 };
               }
             )
