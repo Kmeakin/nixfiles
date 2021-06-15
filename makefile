@@ -8,6 +8,7 @@ stow:
 
 gc:
 	sudo nix-collect-garbage -d && nix-collect-garbage -d
+	sudo nix store optimise && nix store optimise
 
 update:
 	sudo nix flake update
