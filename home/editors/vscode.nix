@@ -14,8 +14,8 @@
         {
           name = "whichkey";
           publisher = "vspacecode";
-          version = "0.8.4";
-          sha256 = "cS8wFNJ5TTfj3eRxWLtYKyyGXoge1lv4SyvxjEAeHS4=";
+          version = "0.8.6";
+          sha256 = "FyRPII+9/tizNOITtIYF59YM0xsIQxpwe7z+Ch9HZzM=";
         }
         {
           publisher = "bodil";
