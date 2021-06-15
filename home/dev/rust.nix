@@ -1,22 +1,8 @@
-{ config, lib, pkgs, fenix, ... }: {
+{ config, lib, pkgs, ... }: {
   home.packages = with pkgs; [
-    (
-      with pkgs.fenix;
-      combine (
-        with latest; [
-          cargo
-          clippy-preview
-          rust-docs
-          rust-src
-          rust-std
-          rustc
-          rustfmt-preview
-        ]
-      )
-    )
+    fenix.latest.toolchain
     cargo-edit
     cargo-expand
-
     sccache
   ];
 
@@ -28,8 +14,8 @@
     RUSTFMT = "$(which rustfmt)";
   };
 
-  programs.vscode.extensions = with pkgs.vscode-extensions; [
-    matklad.rust-analyzer
+  programs.vscode.extensions = [
+    pkgs.fenix.rust-analyzer-vscode-extension
   ] ++ (
     pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
