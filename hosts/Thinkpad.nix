@@ -24,5 +24,20 @@
   swapDevices = [ { device = "/swapfile"; } ];
 
   # CPU
-  powerManagement.cpuFreqGovernor = lib.mkDefault "performance";
+  powerManagement.cpuFreqGovernor = "performance";
+
+  # GPU
+  services.xserver.videoDrivers = [ "intel" ];
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    setLdLibraryPath = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      vaapiIntel
+      vaapiVdpau
+      libvdpau-va-gl
+      libglvnd
+    ];
+  };
 }
