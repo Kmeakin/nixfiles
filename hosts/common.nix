@@ -58,6 +58,10 @@
     noto-fonts-emoji
   ];
 
+  services.plex = {
+    enable = true;
+  };
+
   # TODO: workaround for https://github.com/NixOS/nixpkgs/issues/124215
   documentation.info.enable = false;
 
