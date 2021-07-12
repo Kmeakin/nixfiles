@@ -1,6 +1,12 @@
 { config, pkgs, ... }: {
   nixpkgs.config.allowUnfree = true;
 
+  # Bootloader
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.consoleMode = "max";
+  boot.loader.systemd-boot.editor = false;
+  boot.loader.systemd-boot.memtest86.enable = true;
+
   # enable REISUB
   boot.kernel.sysctl = { "kernel.sysrq" = 1; };
   boot.kernelParams = [ "sysrq_always_enabled=1" ];
