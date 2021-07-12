@@ -24,7 +24,6 @@
     resolvconf.dnsExtensionMechanism = false;
     networkmanager = {
       enable = true;
-      dns = "systemd-resolved";
     };
   };
 
