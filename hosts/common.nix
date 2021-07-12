@@ -20,12 +20,18 @@
   };
 
   # Networking
-  networking = { networkmanager.enable = true; };
-  networking.resolvconf.dnsExtensionMechanism = false;
+  networking = {
+    resolvconf.dnsExtensionMechanism = false;
+    networkmanager = {
+      enable = true;
+      dns = "systemd-resolved";
+    };
+  };
 
   # Sound
   sound.enable = true;
   hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.package = pkgs.pulseaudioFull;
 
   # X11
   services.xserver.enable = true;
@@ -63,10 +69,6 @@
     noto-fonts-cjk
     noto-fonts-emoji
   ];
-
-  services.plex = {
-    enable = true;
-  };
 
   # TODO: workaround for https://github.com/NixOS/nixpkgs/issues/124215
   documentation.info.enable = false;
