@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     rnix-lsp
     manix
+    cachix
   ];
 
   programs.vscode.extensions = with pkgs.vscode-extensions; [
