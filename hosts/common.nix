@@ -20,10 +20,12 @@
   };
 
   # Networking
+  services.resolved.enable = true;
   networking = {
     resolvconf.dnsExtensionMechanism = false;
     networkmanager = {
       enable = true;
+      dns = "systemd-resolved";
     };
   };
 
