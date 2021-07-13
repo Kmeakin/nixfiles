@@ -40,4 +40,10 @@
       libglvnd
     ];
   };
+
+  # TODO: HDMI audio just stopped working one day, now this is required.
+  hardware.pulseaudio.extraConfig = ''
+    load-module module-alsa-sink device=hw:2,3
+  '';
+
 }
