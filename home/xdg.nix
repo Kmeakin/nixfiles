@@ -8,6 +8,7 @@ in
   xdg.configHome = "${home}/.local/config";
   xdg.dataHome = "${home}/.local/share";
 
+  xdg.userDirs.enable = true;
   xdg.userDirs.desktop = "${home}/usr/desktop";
   xdg.userDirs.documents = "${home}/usr/documents";
   xdg.userDirs.download = "${home}/usr/downloads";
