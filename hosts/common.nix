@@ -48,10 +48,12 @@
     pinentryFlavor = "qt";
   };
 
+  programs.adb.enable = true;
+
   # Users
   users.users.karl = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "networkmanager" "adbusers" ];
     shell = pkgs.zsh;
   };
 
