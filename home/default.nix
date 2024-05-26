@@ -27,6 +27,7 @@ inputs @ { config, pkgs, ... }:
     ./editors/vscode.nix
 
     ./dev/c.nix
+    ./dev/nix.nix
     ./dev/rust.nix
   ];
 }

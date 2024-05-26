@@ -11,8 +11,6 @@ in
       vspacecode.vspacecode
       bodil.file-browser
       kahole.magit
-
-      jnoortheen.nix-ide
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [{
       name = "sonokai";
       publisher = "sainnhe";

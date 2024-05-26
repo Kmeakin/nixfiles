@@ -9,6 +9,9 @@
     "git.alwaysSignOff": true,
     "telemetry.telemetryLevel": "off",
     "vim.easymotion": true,
+    "nix.formatterPath": "nixpkgs-fmt",
+    "nix.enableLanguageServer": true,
+    "nix.serverPath": "nixd",
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": [
