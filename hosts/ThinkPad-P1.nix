@@ -34,7 +34,9 @@
   users.users."karmea01" = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
+    shell = pkgs.zsh;
   };
+  programs.zsh.enable = true;
 
   # Networking
   networking.networkmanager.enable = true;

@@ -1,6 +1,6 @@
-inputs @ { config, pkgs, ... }:
+inputs @ { pkgs, ... }:
 {
-  home.packages = with pkgs; [
+  home.packages = [
     pkgs.bat
     pkgs.du-dust
     pkgs.eza
@@ -13,10 +13,6 @@ inputs @ { config, pkgs, ... }:
     pkgs.ranger
     pkgs.ripgrep
   ];
-
-  programs.bash = {
-    enable = true;
-  };
 
   programs.git = {
     enable = true;

@@ -29,5 +29,8 @@ inputs @ { config, pkgs, ... }:
     ./dev/c.nix
     ./dev/nix.nix
     ./dev/rust.nix
+
+    ./shell/bash.nix
+    ./shell/zsh.nix
   ];
 }
