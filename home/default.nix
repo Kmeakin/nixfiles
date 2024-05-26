@@ -18,7 +18,6 @@ inputs @ { config, pkgs, ... }:
     enable = true;
   };
 
-
   home.packages = with pkgs; [
     pkgs.bat
     pkgs.du-dust
@@ -34,6 +33,7 @@ inputs @ { config, pkgs, ... }:
 
   # Imports
   imports = [
+    ./xdg.nix
     ./neovim.nix
     ./vscode.nix
     ./kde.nix
