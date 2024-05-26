@@ -24,5 +24,8 @@ inputs @ { config, pkgs, ... }:
     ./shell.nix
     ./vscode.nix
     ./xdg.nix
+
+    ./dev/c.nix
+    ./dev/rust.nix
   ];
 }

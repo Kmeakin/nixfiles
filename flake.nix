@@ -16,6 +16,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ { ... }:
@@ -36,6 +41,7 @@
           inherit pkgs;
           modules = [
             inputs.plasma-manager.homeManagerModules.plasma-manager
+            ({ ... }: { nixpkgs.overlays = [ inputs.fenix.overlays.default ]; })
             ./home
           ];
         };
