@@ -10,3 +10,4 @@ To install home-manager config:
 
 # Bibliography
 https://github.com/sainnhe/sonokai
+https://vtimofeenko.com/posts/practical-nix-flake-anatomy-a-guided-tour-of-flake.nix
