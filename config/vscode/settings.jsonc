@@ -12,6 +12,7 @@
     "nix.formatterPath": "nixpkgs-fmt",
     "nix.enableLanguageServer": true,
     "nix.serverPath": "nixd",
+    "rust-analyzer.check.command": "clippy",
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": [
