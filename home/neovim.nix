@@ -1,7 +1,6 @@
 inputs @ { config, pkgs, ... }:
 let
-  symlink =
-    config.lib.file.mkOutOfStoreSymlink;
+  symlink = config.lib.file.mkOutOfStoreSymlink;
 in
 {
   programs.neovim = {
@@ -16,5 +15,10 @@ in
 
   home.file = {
     "${config.xdg.configHome}/nvim/init.lua".source = symlink ../config/nvim/init.lua;
+  };
+
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
   };
 }
