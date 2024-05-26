@@ -4,9 +4,6 @@ let
 in
 {
   xdg.enable = true;
-  xdg.cacheHome = "${home}/.local/var/cache";
-  xdg.configHome = "${home}/.local/config";
-  xdg.dataHome = "${home}/.local/share";
 
   xdg.userDirs.enable = true;
   xdg.userDirs.desktop = "${home}/usr/desktop";
