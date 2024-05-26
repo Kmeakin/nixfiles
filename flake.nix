@@ -29,6 +29,8 @@
       pkgs = inputs.nixpkgs.legacyPackages.${system};
     in
     {
+      formatter."${system}" = pkgs.nixpkgs-fmt;
+
       nixosConfigurations = {
         ThinkPad-P1 = inputs.nixpkgs.lib.nixosSystem {
           inherit system;
