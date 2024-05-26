@@ -24,6 +24,16 @@ require("lazy").setup({
             vim.cmd.colorscheme("sonokai")
         end,
     },
+    {
+        -- override deletion operators to not overwrite clipbaord
+        "gbprod/cutlass.nvim",
+        opts = {
+            -- make backspace leave the clipboard alone too
+            override_del = true,
+            -- use `x` to "cut" (delete and copy to clipboard)
+            cut_key = "x", 
+        },
+    },
 })
 
    
