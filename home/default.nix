@@ -10,7 +10,7 @@ inputs @ { config, pkgs, ... }:
 
   home.sessionVariables = { };
 
-  home.packages = with pkgs; [
+  home.packages = [
     pkgs.discord
     pkgs.firefox
     pkgs.spotify

@@ -1,22 +1,24 @@
 inputs @ { config, pkgs, ... }:
 let
   symlink = config.lib.file.mkOutOfStoreSymlink;
+  sonokai =
+    pkgs.vscode-utils.extensionFromVscodeMarketplace {
+      name = "sonokai";
+      publisher = "sainnhe";
+      version = "0.2.9";
+      sha256 = "5b3XPCH6h8FYVyn6Iws2j7lIwHSaQE5glaBnmhGErIk=";
+    };
 in
 {
   programs.vscode = {
     enable = true;
-    extensions = with pkgs.vscode-extensions; [
+    extensions = (with pkgs.vscode-extensions; [
       vscodevim.vim
       vspacecode.whichkey
       vspacecode.vspacecode
       bodil.file-browser
       kahole.magit
-    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [{
-      name = "sonokai";
-      publisher = "sainnhe";
-      version = "0.2.9";
-      sha256 = "5b3XPCH6h8FYVyn6Iws2j7lIwHSaQE5glaBnmhGErIk=";
-    }];
+    ]) ++ [ sonokai ];
   };
 
   home.file = {
