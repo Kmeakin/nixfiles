@@ -36,4 +36,28 @@ require("lazy").setup({
     },
 })
 
-   
+-- Copy indent from current line when starting a new line
+vim.opt.autoindent = true
+
+-- Use system clipboard
+vim.opt.clipboard = "unnamedplus"
+
+-- Line numbers
+vim.opt.number = true
+
+-- Display tabs as 4 spaces
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+
+-- Don't expand tabs to spaces
+vim.opt.expandtab = false
+
+-- Highlight search matches
+vim.opt.hlsearch = true
+
+-- Hightlight search matches as they are typed
+vim.opt.incsearch = true
+
+-- Ignore case in searches, unless the search pattern contains uppercase
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
