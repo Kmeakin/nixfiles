@@ -22,7 +22,7 @@ in
   };
 
   home.file = {
-    "${config.xdg.configHome}/Code/User/settings.json".source = symlink ../config/vscode/settings.jsonc;
-    "${config.xdg.configHome}/Code/User/keybindings.json".source = symlink ../config/vscode/keybindings.jsonc;
+    "${config.xdg.configHome}/Code/User/settings.json".source = symlink ../../config/vscode/settings.jsonc;
+    "${config.xdg.configHome}/Code/User/keybindings.json".source = symlink ../../config/vscode/keybindings.jsonc;
   };
 }

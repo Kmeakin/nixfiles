@@ -14,7 +14,7 @@ in
   };
 
   home.file = {
-    "${config.xdg.configHome}/nvim/init.lua".source = symlink ../config/nvim/init.lua;
+    "${config.xdg.configHome}/nvim/init.lua".source = symlink ../../config/neovim/init.lua;
   };
 
   home.sessionVariables = {

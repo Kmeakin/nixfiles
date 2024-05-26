@@ -20,10 +20,11 @@ inputs @ { config, pkgs, ... }:
   # Imports
   imports = [
     ./kde.nix
-    ./neovim.nix
     ./shell.nix
-    ./vscode.nix
     ./xdg.nix
+
+    ./editors/neovim.nix
+    ./editors/vscode.nix
 
     ./dev/c.nix
     ./dev/rust.nix
