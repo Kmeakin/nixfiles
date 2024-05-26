@@ -1,10 +1,4 @@
-inputs @ { ... }:
-
-let
-  config = inputs.config;
-
-in
-
+inputs @ { config, pkgs, ... }:
 {
   programs.home-manager.enable = true;
   nixpkgs.config.allowUnfree = true;
@@ -15,4 +9,12 @@ in
 
   home.packages = [ ];
   home.sessionVariables = { };
+
+  programs.git = {
+    enable = true;
+  };
+
+
+
+  imports = [ ./neovim.nix ];
 }
