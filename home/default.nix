@@ -32,9 +32,10 @@ inputs @ { config, pkgs, ... }:
     pkgs.ranger
   ];
 
-  # Editors
+  # Imports
   imports = [
     ./neovim.nix
     ./vscode.nix
+    ./kde.nix
   ];
 }

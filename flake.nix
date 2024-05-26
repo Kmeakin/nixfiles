@@ -10,6 +10,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    plasma-manager = {
+      url = "github:pjones/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
   outputs = inputs @ { ... }:
@@ -28,7 +34,10 @@
       homeConfigurations = {
         karmea01 = inputs.home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = [ ./home ];
+          modules = [
+            inputs.plasma-manager.homeManagerModules.plasma-manager
+            ./home
+          ];
         };
       };
     };
