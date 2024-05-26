@@ -11,6 +11,7 @@ inputs @ { config, pkgs, ... }:
     pkgs.nixpkgs-fmt
     pkgs.pass
     pkgs.ranger
+    pkgs.ripgrep
   ];
 
   programs.bash = {
