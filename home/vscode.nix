@@ -13,7 +13,12 @@ in
       kahole.magit
 
       jnoortheen.nix-ide
-    ];
+    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [{
+      name = "sonokai";
+      publisher = "sainnhe";
+      version = "0.2.9";
+      sha256 = "5b3XPCH6h8FYVyn6Iws2j7lIwHSaQE5glaBnmhGErIk=";
+    }];
   };
 
   home.file = {
