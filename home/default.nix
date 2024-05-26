@@ -10,32 +10,19 @@ inputs @ { config, pkgs, ... }:
 
   home.sessionVariables = { };
 
-  # CLI programs 
-  programs.bash = {
-    enable = true;
-  };
-  programs.git = {
-    enable = true;
-  };
-
   home.packages = with pkgs; [
-    pkgs.bat
-    pkgs.du-dust
-    pkgs.eza
-    pkgs.gnupg
-    pkgs.jq
-    pkgs.jumpapp
-    pkgs.neofetch
-    pkgs.nixpkgs-fmt
-    pkgs.pass
-    pkgs.ranger
+    pkgs.discord
+    pkgs.firefox
+    pkgs.spotify
+    pkgs.zoom-us
   ];
 
   # Imports
   imports = [
-    ./xdg.nix
-    ./neovim.nix
-    ./vscode.nix
     ./kde.nix
+    ./neovim.nix
+    ./shell.nix
+    ./vscode.nix
+    ./xdg.nix
   ];
 }
