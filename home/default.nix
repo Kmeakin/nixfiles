@@ -14,7 +14,8 @@ inputs @ { config, pkgs, ... }:
     enable = true;
   };
 
-
-
-  imports = [ ./neovim.nix ];
+  imports = [
+    ./neovim.nix 
+    ./vscode.nix
+  ];
 }

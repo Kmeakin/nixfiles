@@ -1,0 +1,73 @@
+{
+    "workbench.colorTheme": "Sonokai Atlantis",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.minimap.enabled": false,
+    "editor.renderLineHighlight": "gutter",
+    "editor.renderWhitespace": "boundary",
+    "magit.forge-enabled": true,
+    "git.alwaysSignOff": true,
+    "telemetry.telemetryLevel": "off",
+    "vim.easymotion": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
+        },
+        {
+            "before": [
+                ","
+            ],
+            "commands": [
+                "vspacecode.space",
+                {
+                    "args": "m",
+                    "command": "whichkey.triggerKey"
+                }
+            ]
+        }
+    ],
+    "vim.useSystemClipboard": true,
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
+        },
+        {
+            "before": [
+                ","
+            ],
+            "commands": [
+                "vspacecode.space",
+                {
+                    "args": "m",
+                    "command": "whichkey.triggerKey"
+                }
+            ]
+        },
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        }
+    ]
+}
