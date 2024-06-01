@@ -17,8 +17,8 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    fenix = {
-      url = "github:nix-community/fenix";
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -43,7 +43,7 @@
           inherit pkgs;
           modules = [
             inputs.plasma-manager.homeManagerModules.plasma-manager
-            ({ ... }: { nixpkgs.overlays = [ inputs.fenix.overlays.default ]; })
+            ({ ... }: { nixpkgs.overlays = [ inputs.rust-overlay.overlays.default ]; })
             ./home
           ];
         };

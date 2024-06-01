@@ -1,19 +1,16 @@
 inputs @ { pkgs, ... }:
-
 let
-  rust-toolchain = pkgs.fenix.complete.withComponents [
-    "cargo"
-    "clippy"
-    "rustfmt"
-    "rust-src"
-  ];
+  rust-toolchain =
+    pkgs.rust-bin.selectLatestNightlyWith (toolchain: toolchain.default.override {
+      extensions = [ "rust-src" ];
+      targets = [ "aarch64-unknown-linux-gnu" ];
+    });
 in
 {
-  home.packages = [
-    rust-toolchain
-  ];
+  home.packages = [ rust-toolchain ];
 
-  programs.vscode.extensions = [
-    pkgs.fenix.rust-analyzer-vscode-extension
+  programs.vscode.extensions = with pkgs.vscode-extensions; [
+    rust-lang.rust-analyzer
+    tamasfe.even-better-toml
   ];
 }
