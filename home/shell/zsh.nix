@@ -11,11 +11,6 @@ inputs @ { config, pkgs, ... }:
 
     plugins = [
       {
-        name = "zsh-autosuggestions";
-        src = "${pkgs.zsh-autosuggestions}";
-        file = "share/zsh-autosuggestions/zsh-autosuggestions.zsh";
-      }
-      {
         name = "zsh-completions";
         src = "${pkgs.zsh-completions}/share/zsh/site-functions";
       }
@@ -37,6 +32,7 @@ inputs @ { config, pkgs, ... }:
     ];
 
     enableVteIntegration = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
   };
 }
