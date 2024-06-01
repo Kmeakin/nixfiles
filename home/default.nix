@@ -14,6 +14,7 @@ inputs @ { config, pkgs, ... }:
     pkgs.discord
     pkgs.firefox
     pkgs.spotify
+    pkgs.slack
     pkgs.zoom-us
   ];
 
