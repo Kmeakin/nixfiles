@@ -1,7 +1,19 @@
 inputs @ { config, pkgs, ... }:
+let
+  symlink = config.lib.file.mkOutOfStoreSymlink;
+in
 {
+  home.file = {
+    "${config.xdg.configHome}/zsh/rc.zsh".source = symlink ../../config/zsh/rc.zsh;
+  };
 
   programs.zsh = {
+    dotDir = inputs.lib.strings.removePrefix
+      "${config.home.homeDirectory}/"
+      "${config.xdg.configHome}/zsh";
+
+    initExtra = "source ${config.xdg.configHome}/zsh/rc.zsh";
+
     enable = true;
     history = {
       path = "${config.xdg.dataHome}/zsh/history";
@@ -18,16 +30,6 @@ inputs @ { config, pkgs, ... }:
         name = "zsh-history-search-multi-word";
         src = "${pkgs.zsh-history-search-multi-word}";
         file = "share/zsh/zsh-history-search-multi-word/history-search-multi-word.plugin.zsh";
-      }
-      {
-        name = "pure";
-        src = pkgs.fetchFromGitHub {
-          owner = "sindresorhus";
-          repo = "pure";
-          rev = "HEAD";
-          sha256 = "Hdb5wGVkNrmmVWZaKf3xUnNYsTX/8Bb7AhgLNJxNAUc=";
-        };
-        file = "pure.zsh";
       }
     ];
 
