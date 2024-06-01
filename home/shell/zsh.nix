@@ -4,7 +4,7 @@ inputs @ { config, pkgs, ... }:
   programs.zsh = {
     enable = true;
     history = {
-      path = "${config.xdg.dataHome}/zsh_history";
+      path = "${config.xdg.dataHome}/zsh/history";
       save = 2147483647;
       size = 2147483647;
     };
