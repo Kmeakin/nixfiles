@@ -35,5 +35,6 @@ inputs @ { config, pkgs, ... }:
     ./shell.nix
     ./shell/bash.nix
     ./shell/zsh.nix
+    ./shell/alacritty.nix
   ];
 }
