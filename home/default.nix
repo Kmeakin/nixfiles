@@ -22,6 +22,7 @@ inputs @ { config, pkgs, ... }:
   imports = [
     ./kde.nix
     ./xdg.nix
+    ./pass.nix
 
     ./editors/helix.nix
     ./editors/neovim.nix
