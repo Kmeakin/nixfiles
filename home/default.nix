@@ -36,6 +36,7 @@ inputs @ { config, pkgs, ... }:
     ./shell/bash.nix
     ./shell/git.nix
     ./shell/pass.nix
+    ./shell/zellij.nix
     ./shell/zsh.nix
   ];
 }
