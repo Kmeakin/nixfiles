@@ -22,7 +22,6 @@ inputs @ { config, pkgs, ... }:
   imports = [
     ./kde.nix
     ./xdg.nix
-    ./pass.nix
 
     ./editors/helix.nix
     ./editors/neovim.nix
@@ -33,9 +32,10 @@ inputs @ { config, pkgs, ... }:
     ./dev/rust.nix
 
     ./shell.nix
-    ./shell/bash.nix
-    ./shell/zsh.nix
     ./shell/alacritty.nix
+    ./shell/bash.nix
     ./shell/git.nix
+    ./shell/pass.nix
+    ./shell/zsh.nix
   ];
 }
