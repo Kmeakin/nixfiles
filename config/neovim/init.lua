@@ -61,3 +61,6 @@ vim.opt.incsearch = true
 -- Ignore case in searches, unless the search pattern contains uppercase
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+
+-- Allow moving the cursor past the end of the line
+vim.opt.virtualedit = "all"
