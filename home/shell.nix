@@ -12,6 +12,7 @@ inputs @ { pkgs, ... }:
     pkgs.pass
     pkgs.ranger
     pkgs.ripgrep
+	pkgs.man-pages
   ];
 
   home.shellAliases = {
