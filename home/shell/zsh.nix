@@ -21,13 +21,8 @@ inputs @ { config, pkgs, ... }:
       }
       {
         name = "zsh-history-search-multi-word";
-        src = pkgs.fetchFromGitHub {
-          owner = "zdharma";
-          repo = "history-search-multi-word";
-          rev = "HEAD";
-          sha256 = "Lnn44a7WFaVeYplFvpfV88O37I5z1vPrxGW2enX5rE8=";
-        };
-        file = "history-search-multi-word.plugin.zsh";
+        src = "${pkgs.zsh-history-search-multi-word}";
+        file = "share/zsh/zsh-history-search-multi-word/history-search-multi-word.plugin.zsh";
       }
       {
         name = "pure";
