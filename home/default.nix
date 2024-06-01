@@ -23,6 +23,7 @@ inputs @ { config, pkgs, ... }:
     ./shell.nix
     ./xdg.nix
 
+    ./editors/helix.nix
     ./editors/neovim.nix
     ./editors/vscode.nix
 
