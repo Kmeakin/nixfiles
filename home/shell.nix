@@ -14,23 +14,7 @@ inputs @ { pkgs, ... }:
     pkgs.ripgrep
   ];
 
-  programs.git = {
-    enable = true;
-  };
-
   home.shellAliases = {
-    gadd = "git add";
-    gclone = "git clone";
-    gcomm = "git commit -m";
-    gcommit = "git commit";
-    gdiff = "git diff";
-    ginit = "git init";
-    glog = "git log";
-    gpull = "git pull";
-    gpush = "git push";
-    gstat = "git status";
-    gstatus = "git status";
-
     grep = "grep --color=auto";
     igrep = "grep -i";
     rg = "rg --smart-case";
