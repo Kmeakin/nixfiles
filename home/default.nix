@@ -21,7 +21,6 @@ inputs @ { config, pkgs, ... }:
   # Imports
   imports = [
     ./kde.nix
-    ./shell.nix
     ./xdg.nix
 
     ./editors/helix.nix
@@ -32,6 +31,7 @@ inputs @ { config, pkgs, ... }:
     ./dev/nix.nix
     ./dev/rust.nix
 
+    ./shell.nix
     ./shell/bash.nix
     ./shell/zsh.nix
   ];
