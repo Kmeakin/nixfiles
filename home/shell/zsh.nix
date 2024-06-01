@@ -16,11 +16,6 @@ inputs @ { config, pkgs, ... }:
         file = "share/zsh-autosuggestions/zsh-autosuggestions.zsh";
       }
       {
-        name = "zsh-syntax-highlighting";
-        src = "${pkgs.zsh-syntax-highlighting}";
-        file = "share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh";
-      }
-      {
         name = "zsh-completions";
         src = "${pkgs.zsh-completions}/share/zsh/site-functions";
       }
@@ -45,5 +40,8 @@ inputs @ { config, pkgs, ... }:
         file = "pure.zsh";
       }
     ];
+
+    enableVteIntegration = true;
+    syntaxHighlighting.enable = true;
   };
 }
