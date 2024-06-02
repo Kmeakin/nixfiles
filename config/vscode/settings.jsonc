@@ -13,6 +13,27 @@
     "nix.enableLanguageServer": true,
     "nix.serverPath": "nixd",
     "rust-analyzer.check.command": "clippy",
+    "vim.foldfix": true,
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "z",
+                "m"
+            ],
+            "commands": [
+                "editor.foldAll"
+            ]
+        },
+        {
+            "before": [
+                "z",
+                "r"
+            ],
+            "commands": [
+                "editor.unfoldAll"
+            ]
+        }
+    ],
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": [
