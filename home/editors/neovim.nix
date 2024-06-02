@@ -13,6 +13,9 @@ in
     ];
   };
 
+  # for clipboard support
+  home.packages = [ pkgs.xclip pkgs.xsel ];
+
   home.file = {
     "${config.xdg.configHome}/nvim/init.lua".source = symlink ../../config/neovim/init.lua;
   };
