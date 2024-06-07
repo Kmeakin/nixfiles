@@ -32,11 +32,11 @@ inputs @ { config, pkgs, ... }:
     ./dev/rust.nix
 
     ./shell.nix
-    ./shell/wezterm.nix
     ./shell/alacritty.nix
     ./shell/bash.nix
     ./shell/git.nix
     ./shell/pass.nix
+    ./shell/wezterm.nix
     ./shell/zellij.nix
     ./shell/zsh.nix
   ];
